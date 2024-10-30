@@ -35,15 +35,36 @@ auth_section = dbc.Card([
 goal_section = dbc.Card([
     html.H4("Set Daily Goals", className="card-title"),
     dbc.InputGroup([
-        dbc.Input(id="calories-goal", placeholder="Calories (kcal)", type="number"),
-        dbc.Input(id="protein-goal", placeholder="Protein (g)", type="number"),
-        dbc.Input(id="fat-goal", placeholder="Fat (g)", type="number"),
-        dbc.Input(id="carbs-goal", placeholder="Carbohydrates (g)", type="number")
+        dbc.Input(id="calories_goal", placeholder="Calories (kcal)", type="number"),
+        dbc.Input(id="protein_goal", placeholder="Protéines (g)", type="number"),
+        dbc.Input(id="fat_goal", placeholder="Lipides (g)", type="number"),
+        dbc.Input(id="carbs_goal", placeholder="Glucides (g)", type="number")
     ], className="mb-3"),
     dbc.InputGroup([
-        dbc.Input(id="vitamin-c-goal", placeholder="Vitamin C (mg)", type="number"),
-        dbc.Input(id="iron-goal", placeholder="Iron (mg)", type="number"),
-        # Add more inputs as needed for all vitamins and minerals
+        dbc.Input(id="vitamin_a_goal", placeholder="Vitamine A (%)", type="number"),
+        dbc.Input(id="vitamin_b1_goal", placeholder="Vitamine B1 (%)", type="number"),
+        dbc.Input(id="vitamin_b2_goal", placeholder="Vitamine B2 (%)", type="number"),
+        dbc.Input(id="vitamin_b3_goal", placeholder="Vitamine B3 (%)", type="number"),
+        dbc.Input(id="vitamin_b5_goal", placeholder="Vitamine B5 (%)", type="number"),
+        dbc.Input(id="vitamin_b6_goal", placeholder="Vitamine B6 (%)", type="number"),
+        dbc.Input(id="vitamin_b9_goal", placeholder="Vitamine B9 (%)", type="number"),
+        dbc.Input(id="vitamin_b12_goal", placeholder="Vitamine B12 (%)", type="number"),
+        dbc.Input(id="vitamin_c_goal", placeholder="Vitamine C (%)", type="number"),
+        dbc.Input(id="vitamin_d_goal", placeholder="Vitamine D (%)", type="number"),
+        dbc.Input(id="vitamin_e_goal", placeholder="Vitamine E (%)", type="number"),
+        dbc.Input(id="vitamin_k_goal", placeholder="Vitamine K (%)", type="number"),
+        dbc.Input(id="betaine_goal", placeholder="Betaine (%)", type="number"),
+        dbc.Input(id="choline_goal", placeholder="Choline (%)", type="number"),
+        dbc.Input(id="calcium_goal", placeholder="Calcium (%)", type="number"),
+        dbc.Input(id="copper_goal", placeholder="Copper (%)", type="number"),
+        dbc.Input(id="iron_goal", placeholder="Fer (mg)", type="number"),
+        dbc.Input(id="magnesium_goal", placeholder="Magnésium (%)", type="number"),
+        dbc.Input(id="manganese_goal", placeholder="Manganèse (%)", type="number"),
+        dbc.Input(id="phosphorus_goal", placeholder="Phosphore (%)", type="number"),
+        dbc.Input(id="potassium_goal", placeholder="Potassium (%)", type="number"),
+        dbc.Input(id="selenium_goal", placeholder="Selenium (%)", type="number"),
+        dbc.Input(id="sodium_goal", placeholder="Sodium (%)", type="number"),
+        dbc.Input(id="zinc_goal", placeholder="Zinc (%)", type="number"),
     ], className="mb-3"),
     dbc.Button("Save Goals", id="save-goals-button", color="success"),
     html.Div(id="save-goals-message", className="mt-2")
@@ -81,12 +102,37 @@ app.layout = dbc.Container([
     dcc.Dropdown(id="food-dropdown", style={"display": "none"}),
     dbc.Button(id="save-goals-button", style={"display": "none"}),
     dbc.Input(id="food-quantity", style={"display": "none"}),  # Missing input for quantity in food logging
-    dbc.Input(id="calories-goal", style={"display": "none"}),  # Additional goal inputs
-    dbc.Input(id="protein-goal", style={"display": "none"}),
-    dbc.Input(id="fat-goal", style={"display": "none"}),
-    dbc.Input(id="carbs-goal", style={"display": "none"}),
+    dbc.Input(id="calories_goal", style={"display": "none"}),  # Additional goal inputs
+    dbc.Input(id="protein_goal", style={"display": "none"}),
+    dbc.Input(id="fat_goal", style={"display": "none"}),
+    dbc.Input(id="carbs_goal", style={"display": "none"}),
+    dbc.Input(id="vitamin_a_goal", style={"display": "none"}),
+    dbc.Input(id="vitamin_b1_goal", style={"display": "none"}),
+    dbc.Input(id="vitamin_b2_goal", style={"display": "none"}),
+    dbc.Input(id="vitamin_b3_goal", style={"display": "none"}),
+    dbc.Input(id="vitamin_b5_goal", style={"display": "none"}),
+    dbc.Input(id="vitamin_b6_goal", style={"display": "none"}),
+    dbc.Input(id="vitamin_b7_goal", style={"display": "none"}),
+    dbc.Input(id="vitamin_b9_goal", style={"display": "none"}),
+    dbc.Input(id="vitamin_b12_goal", style={"display": "none"}),
+    dbc.Input(id="vitamin_c_goal", style={"display": "none"}),
+    dbc.Input(id="vitamin_d_goal", style={"display": "none"}),
+    dbc.Input(id="vitamin_e_goal", style={"display": "none"}),
+    dbc.Input(id="vitamin_k_goal", style={"display": "none"}),
+    dbc.Input(id="betaine_goal", style={"display": "none"}),
+    dbc.Input(id="choline_goal", style={"display": "none"}),
+    dbc.Input(id="calcium_goal", style={"display": "none"}),
+    dbc.Input(id="copper_goal", style={"display": "none"}),
+    dbc.Input(id="iron_goal", style={"display": "none"}),
+    dbc.Input(id="magnesium_goal", style={"display": "none"}),
+    dbc.Input(id="manganese_goal", style={"display": "none"}),
+    dbc.Input(id="phosphorus_goal", style={"display": "none"}),
+    dbc.Input(id="potassium_goal", style={"display": "none"}),
+    dbc.Input(id="selenium_goal", style={"display": "none"}),
+    dbc.Input(id="sodium_goal", style={"display": "none"}),
+    dbc.Input(id="zinc_goal", style={"display": "none"}),   
     html.Div(id="food-log-message", style={"display": "none"}),
-    html.Div(id="save-goals-message", style={"display": "none"})
+    html.Div(id="save-goals-message", style={"display": "none"}),
 ])
 
 # Callback to handle user login and dynamically load main content
@@ -116,28 +162,58 @@ def authenticate_user(n_clicks, username, password):
 @app.callback(
     Output("save-goals-message", "children"),
     [Input("save-goals-button", "n_clicks")],
-    [State("calories-goal", "value"), State("protein-goal", "value"),
-     State("fat-goal", "value"), State("carbs-goal", "value"),
+    [State("calories_goal", "value"), State("protein_goal", "value"), State("fat_goal", "value"),
+     State("carbs_goal", "value"), State("vitamin_a_goal", "value"), State("vitamin_b1_goal", "value"),
+     State("vitamin_b2_goal", "value"), State("vitamin_b3_goal", "value"), State("vitamin_b5_goal", "value"),
+     State("vitamin_b6_goal", "value"), State("vitamin_b9_goal", "value"), State("vitamin_b12_goal", "value"),
+     State("vitamin_c_goal", "value"), State("vitamin_d_goal", "value"), State("vitamin_e_goal", "value"),
+     State("vitamin_k_goal", "value"), State("betaine_goal", "value"), State("choline_goal", "value"),
+     State("calcium_goal", "value"), State("copper_goal", "value"), State("iron_goal", "value"),
+     State("magnesium_goal", "value"), State("manganese_goal", "value"), State("phosphorus_goal", "value"),
+     State("potassium_goal", "value"), State("selenium_goal", "value"), State("sodium_goal", "value"), State("zinc_goal", "value"),
      State("username", "value")]  # Retrieve username to identify user
 )
-def save_user_goals(n_clicks, calories, protein, fat, carbs, username):
+def save_user_goals(n_clicks, calories, protein, fat, carbs, vitamin_a, vitamin_b1, vitamin_b2, vitamin_b3,
+                    vitamin_b5, vitamin_b6, vitamin_b9, vitamin_b12, vitamin_c, vitamin_d, vitamin_e,
+                    vitamin_k, betaine, choline, calcium, copper, iron, magnesium, manganese, phosphorus,
+                    potassium, selenium, sodium, zinc, username):
     if n_clicks:
+        # Fetch user ID based on the username
         query = "SELECT id FROM user WHERE username = %s"
         user_id = fetch_data(query, (username,)).iloc[0]['id']
         
-        # Insert or update user goals into the database
+        # Insert or update user goals in the database
         query = """
-        INSERT INTO Goals (user_id, calories, protein, fat, carbs)
-        VALUES (%s, %s, %s, %s, %s)
-        ON DUPLICATE KEY UPDATE calories=%s, protein=%s, fat=%s, carbs=%s
+        INSERT INTO Goals (user_id, calories, protein, fat, carbs, vitamin_a, vitamin_b1, vitamin_b2, vitamin_b3,
+                           vitamin_b5, vitamin_b6, vitamin_b9, vitamin_b12, vitamin_c, vitamin_d, vitamin_e,
+                           vitamin_k, betaine, choline, calcium, copper, iron, magnesium, manganese, phosphorus,
+                           potassium, selenium, sodium, zinc)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        ON DUPLICATE KEY UPDATE
+            calories=%s, protein=%s, fat=%s, carbs=%s, vitamin_a=%s, vitamin_b1=%s, vitamin_b2=%s, vitamin_b3=%s,
+            vitamin_b5=%s, vitamin_b6=%s, vitamin_b9=%s, vitamin_b12=%s, vitamin_c=%s, vitamin_d=%s, vitamin_e=%s,
+            vitamin_k=%s, betaine=%s, choline=%s, calcium=%s, copper=%s, iron=%s, magnesium=%s, manganese=%s,
+            phosphorus=%s, potassium=%s, selenium=%s, sodium=%s, zinc=%s
         """
-        params = (user_id, calories, protein, fat, carbs, calories, protein, fat, carbs)
+        
+        # Prepare parameters for the query
+        params = (user_id, calories, protein, fat, carbs, vitamin_a, vitamin_b1, vitamin_b2, vitamin_b3,
+                  vitamin_b5, vitamin_b6, vitamin_b9, vitamin_b12, vitamin_c, vitamin_d, vitamin_e,
+                  vitamin_k, betaine, choline, calcium, copper, iron, magnesium, manganese, phosphorus,
+                  potassium, selenium, sodium, zinc,
+                  calories, protein, fat, carbs, vitamin_a, vitamin_b1, vitamin_b2, vitamin_b3,
+                  vitamin_b5, vitamin_b6, vitamin_b9, vitamin_b12, vitamin_c, vitamin_d, vitamin_e,
+                  vitamin_k, betaine, choline, calcium, copper, iron, magnesium, manganese, phosphorus,
+                  potassium, selenium, sodium, zinc)
+        
+        # Execute the query to save data
         conn = create_connection()
         cursor = conn.cursor()
         cursor.execute(query, params)
         conn.commit()
         cursor.close()
         conn.close()
+        
         return "Goals saved successfully!"
     raise PreventUpdate
 
