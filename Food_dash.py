@@ -31,45 +31,6 @@ auth_section = dbc.Card([
     html.Div(id="login-message", className="mt-2")
 ], body=True)
 
-# Goal setting section layout
-goal_section = dbc.Card([
-    html.H4("Set Daily Goals", className="card-title"),
-    dbc.InputGroup([
-        dbc.Input(id="calories_goal", placeholder="Calories (kcal)", type="number"),
-        dbc.Input(id="protein_goal", placeholder="Protéines (g)", type="number"),
-        dbc.Input(id="fat_goal", placeholder="Lipides (g)", type="number"),
-        dbc.Input(id="carbs_goal", placeholder="Glucides (g)", type="number")
-    ], className="mb-3"),
-    dbc.InputGroup([
-        dbc.Input(id="vitamin_a_goal", placeholder="Vitamine A (%)", type="number"),
-        dbc.Input(id="vitamin_b1_goal", placeholder="Vitamine B1 (%)", type="number"),
-        dbc.Input(id="vitamin_b2_goal", placeholder="Vitamine B2 (%)", type="number"),
-        dbc.Input(id="vitamin_b3_goal", placeholder="Vitamine B3 (%)", type="number"),
-        dbc.Input(id="vitamin_b5_goal", placeholder="Vitamine B5 (%)", type="number"),
-        dbc.Input(id="vitamin_b6_goal", placeholder="Vitamine B6 (%)", type="number"),
-        dbc.Input(id="vitamin_b9_goal", placeholder="Vitamine B9 (%)", type="number"),
-        dbc.Input(id="vitamin_b12_goal", placeholder="Vitamine B12 (%)", type="number"),
-        dbc.Input(id="vitamin_c_goal", placeholder="Vitamine C (%)", type="number"),
-        dbc.Input(id="vitamin_d_goal", placeholder="Vitamine D (%)", type="number"),
-        dbc.Input(id="vitamin_e_goal", placeholder="Vitamine E (%)", type="number"),
-        dbc.Input(id="vitamin_k_goal", placeholder="Vitamine K (%)", type="number"),
-        dbc.Input(id="betaine_goal", placeholder="Betaine (%)", type="number"),
-        dbc.Input(id="choline_goal", placeholder="Choline (%)", type="number"),
-        dbc.Input(id="calcium_goal", placeholder="Calcium (%)", type="number"),
-        dbc.Input(id="copper_goal", placeholder="Copper (%)", type="number"),
-        dbc.Input(id="iron_goal", placeholder="Fer (mg)", type="number"),
-        dbc.Input(id="magnesium_goal", placeholder="Magnésium (%)", type="number"),
-        dbc.Input(id="manganese_goal", placeholder="Manganèse (%)", type="number"),
-        dbc.Input(id="phosphorus_goal", placeholder="Phosphore (%)", type="number"),
-        dbc.Input(id="potassium_goal", placeholder="Potassium (%)", type="number"),
-        dbc.Input(id="selenium_goal", placeholder="Selenium (%)", type="number"),
-        dbc.Input(id="sodium_goal", placeholder="Sodium (%)", type="number"),
-        dbc.Input(id="zinc_goal", placeholder="Zinc (%)", type="number"),
-    ], className="mb-3"),
-    dbc.Button("Save Goals", id="save-goals-button", color="success"),
-    html.Div(id="save-goals-message", className="mt-2")
-], body=True)
-
 # Food selection by category section layout
 food_selection_section = dbc.Card([
     html.H4("Log Food Intake", className="card-title"),
@@ -87,6 +48,52 @@ food_selection_section = dbc.Card([
     dbc.Input(id="food-quantity", placeholder="Quantity (g)", type="number"),
     dbc.Button("Add Food", id="add-food-button", color="info", className="mt-2"),
     html.Div(id="food-log-message", className="mt-2")
+], body=True)
+
+# Goal setting section layout
+goal_section = dbc.Card([
+    html.H4("Set Daily Goals", className="card-title"),
+    dbc.InputGroup([
+        dbc.Input(id="calories_goal", placeholder="Calories (kcal)", type="number"),
+        dbc.Input(id="protein_goal", placeholder="Protéines (g)", type="number"),
+        dbc.Input(id="fat_goal", placeholder="Lipides (g)", type="number"),
+        dbc.Input(id="carbs_goal", placeholder="Glucides (g)", type="number")
+    ], className="mb-3"),
+    dbc.InputGroup([
+        dbc.Input(id="vitamin_a_goal", placeholder="Vitamine A (%)", type="number"),
+        dbc.Input(id="vitamin_c_goal", placeholder="Vitamine C (%)", type="number"),
+        dbc.Input(id="vitamin_d_goal", placeholder="Vitamine D (%)", type="number"),
+        dbc.Input(id="vitamin_e_goal", placeholder="Vitamine E (%)", type="number"),
+        dbc.Input(id="vitamin_k_goal", placeholder="Vitamine K (%)", type="number"),
+    ], className="mb-3"),
+    dbc.InputGroup([
+        dbc.Input(id="vitamin_b1_goal", placeholder="Vitamine B1 (%)", type="number"),
+        dbc.Input(id="vitamin_b2_goal", placeholder="Vitamine B2 (%)", type="number"),
+        dbc.Input(id="vitamin_b3_goal", placeholder="Vitamine B3 (%)", type="number"),
+        dbc.Input(id="vitamin_b5_goal", placeholder="Vitamine B5 (%)", type="number"),
+        dbc.Input(id="vitamin_b6_goal", placeholder="Vitamine B6 (%)", type="number"),
+        dbc.Input(id="vitamin_b7_goal", placeholder="Vitamine B7 (%)", type="number"),
+        dbc.Input(id="vitamin_b9_goal", placeholder="Vitamine B9 (%)", type="number"),
+        dbc.Input(id="vitamin_b12_goal", placeholder="Vitamine B12 (%)", type="number"),
+    ], className="mb-3"),
+    dbc.InputGroup([
+        dbc.Input(id="betaine_goal", placeholder="Betaine (%)", type="number"),
+        dbc.Input(id="choline_goal", placeholder="Choline (%)", type="number"),
+        dbc.Input(id="calcium_goal", placeholder="Calcium (%)", type="number"),
+        dbc.Input(id="copper_goal", placeholder="Copper (%)", type="number"),
+        dbc.Input(id="iron_goal", placeholder="Fer (mg)", type="number"),
+        dbc.Input(id="magnesium_goal", placeholder="Magnésium (%)", type="number"),
+    ], className="mb-3"),
+    dbc.InputGroup([
+        dbc.Input(id="manganese_goal", placeholder="Manganèse (%)", type="number"),
+        dbc.Input(id="phosphorus_goal", placeholder="Phosphore (%)", type="number"),
+        dbc.Input(id="potassium_goal", placeholder="Potassium (%)", type="number"),
+        dbc.Input(id="selenium_goal", placeholder="Selenium (%)", type="number"),
+        dbc.Input(id="sodium_goal", placeholder="Sodium (%)", type="number"),
+        dbc.Input(id="zinc_goal", placeholder="Zinc (%)", type="number"),
+    ], className="mb-3"),
+    dbc.Button("Save Goals", id="save-goals-button", color="success"),
+    html.Div(id="save-goals-message", className="mt-2")
 ], body=True)
 
 # Placeholder layout before login
@@ -150,10 +157,16 @@ def authenticate_user(n_clicks, username, password):
         user = fetch_data(query, (username, password))
         if not user.empty:
             user_id = user.iloc[0]['user_id']  # Assuming 'user_id' is primary key for Users table
-            main_content_layout = dbc.Row([
-                dbc.Col(goal_section, width=6),
-                dbc.Col(food_selection_section, width=6)
-            ])
+            
+            # Show food selection on top and goals at the bottom
+            main_content_layout = [
+                dbc.Row([  # Row for food selection
+                    dbc.Col(food_selection_section, width=12)  # Use full width for food selection
+                ]),
+                dbc.Row([  # Row for goals
+                    dbc.Col(goal_section, width=12)  # Use full width for goals
+                ])
+            ]
             return "Login successful!", main_content_layout, {"display": "block"}, {"display": "none"}
         return "Invalid username or password.", dash.no_update, {"display": "none"}, {"display": "block"}
     raise PreventUpdate
